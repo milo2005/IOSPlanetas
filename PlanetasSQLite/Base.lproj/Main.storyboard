@@ -1,14 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUR-Z2-hvA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="TsJ-2J-lPG">
+            <objects>
+                <navigationController id="RUR-Z2-hvA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="02X-iO-Jkl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.13490513392857142" green="0.49232700892857145" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3pQ-9c-4Sk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPG-dx-RvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="115"/>
+        </scene>
+        <!--Planetas-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlanetasSQLite" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +43,140 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uzg-KE-lHf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="99" id="u8H-iZ-aVj" customClass="PlanetaTableViewCell" customModule="PlanetasSQLite" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u8H-iZ-aVj" id="7yJ-69-8ha">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Loj-vH-A63">
+                                                    <rect key="frame" x="8" y="54" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH4-4s-wHm">
+                                                    <rect key="frame" x="8" y="14" width="359" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="BWr-MW-EV2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="33"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Loj-vH-A63" firstAttribute="trailing" secondItem="7yJ-69-8ha" secondAttribute="trailingMargin" id="0Hg-gb-t42"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Loj-vH-A63" secondAttribute="bottom" constant="15" id="JDU-8N-i9q"/>
+                                                <constraint firstItem="Loj-vH-A63" firstAttribute="leading" secondItem="7yJ-69-8ha" secondAttribute="leadingMargin" id="TgG-oR-QBc"/>
+                                                <constraint firstItem="BH4-4s-wHm" firstAttribute="top" secondItem="7yJ-69-8ha" secondAttribute="topMargin" constant="6" id="Xr6-De-MQP"/>
+                                                <constraint firstItem="BH4-4s-wHm" firstAttribute="trailing" secondItem="7yJ-69-8ha" secondAttribute="trailingMargin" id="mEC-4n-3ju"/>
+                                                <constraint firstItem="BH4-4s-wHm" firstAttribute="leading" secondItem="7yJ-69-8ha" secondAttribute="leadingMargin" id="uKm-ZY-2ke"/>
+                                                <constraint firstItem="Loj-vH-A63" firstAttribute="top" secondItem="BH4-4s-wHm" secondAttribute="bottom" constant="8" id="z8f-Fg-Un6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gravity" destination="Loj-vH-A63" id="TAB-oc-6Ak"/>
+                                            <outlet property="name" destination="BH4-4s-wHm" id="ie0-dt-bpS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5YN-CE-5BT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uzg-KE-lHf" secondAttribute="bottom" id="21x-MD-Pf3"/>
+                            <constraint firstItem="Uzg-KE-lHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4zK-1h-4DY"/>
+                            <constraint firstItem="Uzg-KE-lHf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BRV-CQ-O0b"/>
+                            <constraint firstAttribute="trailing" secondItem="Uzg-KE-lHf" secondAttribute="trailing" id="EqR-t5-wng"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Planetas" id="DT6-fB-nmi">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="xxO-a1-1Tu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xo2-LV-wK8">
+                            <connections>
+                                <segue destination="Kx6-Im-1Kc" kind="show" id="Ha4-ji-HYO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="Uzg-KE-lHf" id="pyU-qs-hLb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="114.69265367316342"/>
+        </scene>
+        <!--Agregar Planeta-->
+        <scene sceneID="ddv-n9-uGi">
+            <objects>
+                <viewController id="Kx6-Im-1Kc" customClass="AddViewController" customModule="PlanetasSQLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yVP-Ps-2ur"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddF-3D-nDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GNn-9w-jIa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rz2-wD-h4W">
+                                <rect key="frame" x="16" y="88" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gravedad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wtz-pq-eyf">
+                                <rect key="frame" x="16" y="142" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-IK-1c0">
+                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <color key="backgroundColor" red="0.2648427533005977" green="0.44450124476712888" blue="0.9288504464285714" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Duk-VI-oX2"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Agregar"/>
+                                <connections>
+                                    <action selector="addPlaneta:" destination="Kx6-Im-1Kc" eventType="touchUpInside" id="jnv-MV-gwD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ddF-3D-nDv" firstAttribute="top" secondItem="GsC-IK-1c0" secondAttribute="bottom" id="38N-fY-lId"/>
+                            <constraint firstItem="GsC-IK-1c0" firstAttribute="leading" secondItem="GNn-9w-jIa" secondAttribute="leading" id="MOu-Cm-5fN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rz2-wD-h4W" secondAttribute="leading" id="OYQ-Nq-k7B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rz2-wD-h4W" secondAttribute="trailing" id="SpH-QR-bPr"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Wtz-pq-eyf" secondAttribute="leading" id="Z5S-Ko-KNG"/>
+                            <constraint firstItem="Wtz-pq-eyf" firstAttribute="top" secondItem="rz2-wD-h4W" secondAttribute="bottom" constant="24" id="b8N-lo-kHc"/>
+                            <constraint firstAttribute="trailing" secondItem="GsC-IK-1c0" secondAttribute="trailing" id="eAU-fq-FmF"/>
+                            <constraint firstItem="rz2-wD-h4W" firstAttribute="top" secondItem="yVP-Ps-2ur" secondAttribute="bottom" constant="24" id="k6M-2R-Ca8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wtz-pq-eyf" secondAttribute="trailing" id="sk4-Cd-UCB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Agregar Planeta" id="3kr-kz-3wZ">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="iy5-BI-MMZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gravity" destination="Wtz-pq-eyf" id="X6l-zG-Vrf"/>
+                        <outlet property="name" destination="rz2-wD-h4W" id="dVw-ST-hsw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6m-PS-fbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.79999999999995" y="114.69265367316342"/>
         </scene>
     </scenes>
 </document>

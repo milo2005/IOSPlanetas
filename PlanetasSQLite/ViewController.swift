@@ -8,16 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var table: UITableView!
+    var data:[Planeta]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        data = []
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Data Source
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PlanetaTableViewCell
+        
+        let p = data[indexPath.row]
+        
+        cell.name.text = p.nombre
+        cell.gravity.text = "Gravedad \(p.gravity)"
+        
+        return cell
     }
 
 
