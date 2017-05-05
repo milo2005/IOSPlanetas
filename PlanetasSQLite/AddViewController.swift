@@ -12,10 +12,11 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var gravity: UITextField!
+    var dao:PlanetaDAO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dao = PlanetaDAO()
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +30,8 @@ class AddViewController: UIViewController {
         let planeta = Planeta()
         planeta.nombre = name.text!
         planeta.gravity = Double(gravity.text!)
+        _ = dao.insert(planeta: planeta)
+        navigationController?.popViewController(animated: true)
     }
 
     /*

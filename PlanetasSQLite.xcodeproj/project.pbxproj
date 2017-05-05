@@ -15,6 +15,8 @@
 		1B2E41B61EBBDC290015508F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E41B51EBBDC290015508F /* AddViewController.swift */; };
 		1B2E41B81EBBDC3B0015508F /* Planeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E41B71EBBDC3B0015508F /* Planeta.swift */; };
 		1B2E41BA1EBBDC4E0015508F /* PlanetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E41B91EBBDC4E0015508F /* PlanetaTableViewCell.swift */; };
+		1B2E41DB1EBBF2700015508F /* PlanetaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E41DA1EBBF2700015508F /* PlanetaDAO.swift */; };
+		3F6ECC60DB5CB13F02DD2D1E /* Pods_PlanetasSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61F85642DC5B38DFC3EBA58 /* Pods_PlanetasSQLite.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		1B2E41B51EBBDC290015508F /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1B2E41B71EBBDC3B0015508F /* Planeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planeta.swift; sourceTree = "<group>"; };
 		1B2E41B91EBBDC4E0015508F /* PlanetaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaTableViewCell.swift; sourceTree = "<group>"; };
+		1B2E41DA1EBBF2700015508F /* PlanetaDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetaDAO.swift; sourceTree = "<group>"; };
+		4692FFCC678DE1DE177A07E1 /* Pods-PlanetasSQLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetasSQLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetasSQLite/Pods-PlanetasSQLite.release.xcconfig"; sourceTree = "<group>"; };
+		C7402DF1B2F55112EC5FB4E4 /* Pods-PlanetasSQLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetasSQLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetasSQLite/Pods-PlanetasSQLite.debug.xcconfig"; sourceTree = "<group>"; };
+		F61F85642DC5B38DFC3EBA58 /* Pods_PlanetasSQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanetasSQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6ECC60DB5CB13F02DD2D1E /* Pods_PlanetasSQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				1B2E41A01EBBD9D00015508F /* PlanetasSQLite */,
 				1B2E419F1EBBD9D00015508F /* Products */,
+				4EFFF8B0836ED13DF1FCF011 /* Pods */,
+				BB94ECAFE79739B58630E65B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +69,7 @@
 		1B2E41A01EBBD9D00015508F /* PlanetasSQLite */ = {
 			isa = PBXGroup;
 			children = (
+				1B2E41D91EBBF2010015508F /* database */,
 				1B2E41B41EBBDC110015508F /* Models */,
 				1B2E41B31EBBDC070015508F /* Cells */,
 				1B2E41A11EBBD9D00015508F /* AppDelegate.swift */,
@@ -89,6 +99,31 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		1B2E41D91EBBF2010015508F /* database */ = {
+			isa = PBXGroup;
+			children = (
+				1B2E41DA1EBBF2700015508F /* PlanetaDAO.swift */,
+			);
+			name = database;
+			sourceTree = "<group>";
+		};
+		4EFFF8B0836ED13DF1FCF011 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7402DF1B2F55112EC5FB4E4 /* Pods-PlanetasSQLite.debug.xcconfig */,
+				4692FFCC678DE1DE177A07E1 /* Pods-PlanetasSQLite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB94ECAFE79739B58630E65B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F61F85642DC5B38DFC3EBA58 /* Pods_PlanetasSQLite.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B2E41B01EBBD9D00015508F /* Build configuration list for PBXNativeTarget "PlanetasSQLite" */;
 			buildPhases = (
+				A6F3667E6B7DE6E9247CF64B /* [CP] Check Pods Manifest.lock */,
 				1B2E419A1EBBD9CF0015508F /* Sources */,
 				1B2E419B1EBBD9CF0015508F /* Frameworks */,
 				1B2E419C1EBBD9CF0015508F /* Resources */,
+				81FEE5A7200475CB20E72BE5 /* [CP] Embed Pods Frameworks */,
+				A3CC0131287E9371317F730B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +194,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		81FEE5A7200475CB20E72BE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetasSQLite/Pods-PlanetasSQLite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3CC0131287E9371317F730B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetasSQLite/Pods-PlanetasSQLite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F3667E6B7DE6E9247CF64B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B2E419A1EBBD9CF0015508F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -165,6 +251,7 @@
 				1B2E41B81EBBDC3B0015508F /* Planeta.swift in Sources */,
 				1B2E41A21EBBD9D00015508F /* AppDelegate.swift in Sources */,
 				1B2E41BA1EBBDC4E0015508F /* PlanetaTableViewCell.swift in Sources */,
+				1B2E41DB1EBBF2700015508F /* PlanetaDAO.swift in Sources */,
 				1B2E41B61EBBDC290015508F /* AddViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +373,7 @@
 		};
 		1B2E41B11EBBD9D00015508F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7402DF1B2F55112EC5FB4E4 /* Pods-PlanetasSQLite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlanetasSQLite/Info.plist;
@@ -298,6 +386,7 @@
 		};
 		1B2E41B21EBBD9D00015508F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4692FFCC678DE1DE177A07E1 /* Pods-PlanetasSQLite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlanetasSQLite/Info.plist;
@@ -327,6 +416,7 @@
 				1B2E41B21EBBD9D00015508F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

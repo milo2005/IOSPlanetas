@@ -14,7 +14,7 @@
         <scene sceneID="TsJ-2J-lPG">
             <objects>
                 <navigationController id="RUR-Z2-hvA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="02X-iO-Jkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="02X-iO-Jkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,8 +82,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="gravity" destination="Loj-vH-A63" id="TAB-oc-6Ak"/>
-                                            <outlet property="name" destination="BH4-4s-wHm" id="ie0-dt-bpS"/>
+                                            <outlet property="gravity" destination="Loj-vH-A63" id="Jsi-Gh-sFW"/>
+                                            <outlet property="name" destination="BH4-4s-wHm" id="9N1-7h-tdW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

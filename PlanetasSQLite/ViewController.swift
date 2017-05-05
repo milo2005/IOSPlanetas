@@ -12,10 +12,18 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     var data:[Planeta]!
+    var dao:PlanetaDAO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dao = PlanetaDAO()
         data = []
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        data = dao.all()
+        table.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let p = data[indexPath.row]
         
         cell.name.text = p.nombre
-        cell.gravity.text = "Gravedad \(p.gravity)"
+        cell.gravity.text = "Gravedad \(p.gravity!)"
         
         return cell
     }
